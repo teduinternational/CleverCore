@@ -1,0 +1,5 @@
+Add-Migration Inital
+update-database
+
+
+ALTER AUTHORIZATION ON DATABASE::TeduCoreApp TO sa;    

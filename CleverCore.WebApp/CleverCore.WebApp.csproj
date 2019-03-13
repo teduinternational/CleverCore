@@ -1,0 +1,68 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <UserSecretsId>aspnet-CleverCore-C4D92190-4731-4D06-88EE-9CFEEBF9F478</UserSecretsId>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="6.1.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="3.1.0" />
+    <PackageReference Include="EPPlus.Core" Version="1.5.4" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR" Version="1.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="PaulMiami.AspNetCore.Mvc.Recaptcha" Version="1.2.1" />
+    <PackageReference Include="Serilog.Extensions.Logging.File" Version="1.1.0" />
+    <PackageReference Include="SkiaSharp" Version="1.59.3" />
+    <PackageReference Include="WebMarkupMin.AspNetCore2" Version="2.4.2" />
+    <PackageReference Include="WebMarkupMin.NUglify" Version="2.4.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CleverCore.Application.Dapper\CleverCore.Application.Dapper.csproj" />
+    <ProjectReference Include="..\CleverCore.Application\CleverCore.Application.csproj" />
+    <ProjectReference Include="..\CleverCore.Data.EF\CleverCore.Data.EF.csproj" />
+    <ProjectReference Include="..\CleverCore.Data\CleverCore.Data.csproj" />
+    <ProjectReference Include="..\CleverCore.Infrastructure\CleverCore.Infrastructure.csproj" />
+    <ProjectReference Include="..\CleverCore.Utilities\CleverCore.Utilities.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\Controllers\HomeController.en-US.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Controllers\HomeController.vi-VN.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Models\AccountViewModels\LoginViewModel.en-US.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Models\AccountViewModels\LoginViewModel.vi-VN.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views\Home\Index.en-US.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views\Home\Index.vi-VN.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views\Shared\Components\CategoryMenu\Default.en-US.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views\Shared\Components\CategoryMenu\Default.vi-VN.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views\Shared\_Header.en-US.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views\Shared\_Header.vi-VN.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

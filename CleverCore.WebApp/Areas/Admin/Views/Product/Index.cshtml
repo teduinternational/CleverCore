@@ -1,0 +1,127 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+@section Styles{
+    <link href="~/lib/jQuery-EasyUI/themes/bootstrap/easyui.css" rel="stylesheet" />
+    <link href="~/lib/jQuery-EasyUI/themes/icon.css" rel="stylesheet" />
+}
+@section Scripts{
+<script src="~/lib/jQuery-EasyUI/jquery.easyui.min.js"></script>
+
+<environment names="Development">
+    <script src="~/app/controllers/product/image-management.js" asp-append-version="true"></script>
+    <script src="~/app/controllers/product/quantity-management.js" asp-append-version="true"></script>
+    <script src="~/app/controllers/product/whole-price-management.js" asp-append-version="true"></script>
+    <script src="~/app/controllers/product/index.js" asp-append-version="true"></script>
+    <script>
+        var product = new productController();
+        product.initialize();
+    </script>
+</environment>
+<environment names="Staging,Production">
+    <script>
+        var product = new productController();
+        product.initialize();
+    </script>
+</environment>
+
+
+}
+<div class="page-title">
+    <div class="title_left">
+        <h3>Products <small>List products</small></h3>
+    </div>
+
+    <div class="title_right">
+        <div class="col-md-3 col-sm-5 col-xs-12 form-group pull-right">
+
+            <div class="input-group">
+                <input type="text" id="txtKeyword" class="form-control" placeholder="Search for...">
+                <span class="input-group-btn">
+                    <button class="btn btn-primary" id="btnSearch" type="button">Go!</button>
+                </span>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-12  form-group pull-right">
+            <select class="form-control" id="ddlCategorySearch">
+                <option>--Select category--</option>
+            </select>
+        </div>
+        <div class="col-md-6 col-sm-12  form-group pull-right">
+            <button id="btnCreate" class="btn btn-success">Create</button>
+            <a class="btn btn-danger" href="~/templates/ProductImportTemplate.xlsx">Template</a>
+            <button class="btn btn-primary" id="btn-import" type="button"><i class="fa fa-file-excel-o"></i></button>
+            <button class="btn btn-default" id="btn-export" type="button"><i class="fa fa-forward"></i></button>
+
+        </div>
+    </div>
+</div>
+<div class="clearfix"></div>
+
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            <div class="x_content">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                           
+                            <th>Name</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Image</th>
+                            <th>Created Date</th>
+                            <th>Status</th>
+                            <th width="20%">#</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbl-content"></tbody>
+                </table>
+                <!--Pagination-->
+                <div class="row">
+                    <div class="col-sm-5">
+                        <div class="dataTables_info" id="datatable-checkbox_info" role="status" aria-live="polite">
+                            <select id="ddlShowPage">
+                                <option value="10" selected="selected">10</option>
+                                <option value="20">20</option>
+                                <option value="30">30</option>
+                                <option value="50">50</option>
+                            </select>
+                            <span class="item-per-page">
+                                bản ghi/trang.
+                            </span>
+                            Tổng số bản ghi: <strong id="lblTotalRecords"></strong>
+                        </div>
+                    </div><div class="col-sm-7">
+                        <div class="dataTables_paginate paging_simple_numbers" id="datatable-checkbox_paginate">
+                            <ul id="paginationUL"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script id="table-template" type="x-tmpl-mustache">
+    <tr>
+        
+        <td>{{Name}}</td>
+        <td>{{CategoryName}}</td>
+        <td>{{Price}}</td>
+        <td>{{{Image}}}</td>
+        <td>{{CreatedDate}}</td>
+        <td>{{{Status}}}</td>
+        <th scope="row">
+            <a class="btn  btn-sm btn-edit" data-id="{{Id}}"><i class="fa fa-pencil"></i></a>
+            <a class="btn  btn-sm btn-delete" data-id="{{Id}}"><i class="fa fa-trash"></i></a>
+            <a href="#" data-id="{{Id}}" class="btn btn-xs btn-images"><i class="fa fa-image"></i></a>
+            <a href="#" data-id="{{Id}}" class="btn btn-xs btn-quantity"><i class="fa fa-hourglass-start"></i></a>
+            <a href="#" data-id="{{Id}}" class="btn btn-xs btn-whole-price"><i class="fa fa-money"></i></a>
+        </th>
+    </tr>
+</script>
+<partial name="_AddEditModal.cshtml" />
+<partial name="_ImportExcelModal.cshtml" />
+<partial name="_QuantityManagement.cshtml" />
+<partial name="_ImageManagement.cshtml" />
+<partial name="_WholePriceManagement.cshtml" />
