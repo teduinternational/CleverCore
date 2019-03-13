@@ -2,27 +2,28 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Threading.Tasks;
 
 namespace CleverCore.Infrastructure.Interfaces
 {
-    public interface IRepository<T, K> where T : class
+    public interface IRepository<TEntity, in TKey> where TEntity : class
     {
-        T FindById(K id, params Expression<Func<T, object>>[] includeProperties);
+        Task<TEntity> FindById(TKey id, params Expression<Func<TEntity, object>>[] includeProperties);
 
-        T FindSingle(Expression<Func<T, bool>> predicate, params Expression<Func<T, object>>[] includeProperties);
+        Task<TEntity> FindSingle(Expression<Func<TEntity, bool>> predicate, params Expression<Func<TEntity, object>>[] includeProperties);
 
-        IQueryable<T> FindAll(params Expression<Func<T, object>>[] includeProperties);
+        IQueryable<TEntity> FindAll(params Expression<Func<TEntity, object>>[] includeProperties);
 
-        IQueryable<T> FindAll(Expression<Func<T, bool>> predicate, params Expression<Func<T, object>>[] includeProperties);
+        IQueryable<TEntity> FindAll(Expression<Func<TEntity, bool>> predicate, params Expression<Func<TEntity, object>>[] includeProperties);
 
-        void Add(T entity);
+        Task Add(TEntity entity);
 
-        void Update(T entity);
+        void Update(TEntity entity);
 
-        void Remove(T entity);
+        void Remove(TEntity entity);
 
-        void Remove(K id);
+        Task Remove(TKey id);
 
-        void RemoveMultiple(List<T> entities);
+        void RemoveMultiple(List<TEntity> entities);
     }
 }

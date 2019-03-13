@@ -19,7 +19,6 @@ namespace CleverCore.Data.EF
         public AppDbContext(DbContextOptions options) : base(options)
         {
         }
-
         public DbSet<Language> Languages { set; get; }
         public DbSet<SystemConfig> SystemConfigs { get; set; }
         public DbSet<Function> Functions { get; set; }
@@ -35,7 +34,6 @@ namespace CleverCore.Data.EF
         public DbSet<BlogTag> BlogTags { set; get; }
         public DbSet<Color> Colors { set; get; }
         public DbSet<Contact> Contacts { set; get; }
-        public DbSet<Feedback> Feedbacks { set; get; }
         public DbSet<Footer> Footers { set; get; }
         public DbSet<Page> Pages { set; get; }
         public DbSet<Product> Products { set; get; }
@@ -52,9 +50,6 @@ namespace CleverCore.Data.EF
         public DbSet<Permission> Permissions { get; set; }
         public DbSet<WholePrice> WholePrices { get; set; }
 
-        public DbSet<AdvertistmentPage> AdvertistmentPages { get; set; }
-        public DbSet<Advertistment> Advertistments { get; set; }
-        public DbSet<AdvertistmentPosition> AdvertistmentPositions { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -94,8 +89,7 @@ namespace CleverCore.Data.EF
 
             foreach (EntityEntry item in modified)
             {
-                var changedOrAddedItem = item.Entity as IDateTracking;
-                if (changedOrAddedItem != null)
+                if (item.Entity is IDateTracking changedOrAddedItem)
                 {
                     if (item.State == EntityState.Added)
                     {

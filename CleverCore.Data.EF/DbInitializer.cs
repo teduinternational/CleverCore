@@ -74,7 +74,7 @@ namespace CleverCore.Data.EF
                     Lng = 105.7894758
                 });
             }
-            if (_context.Functions.Count() == 0)
+            if (!_context.Functions.Any())
             {
                 _context.Functions.AddRange(new List<Function>()
                 {
@@ -131,28 +131,9 @@ namespace CleverCore.Data.EF
                 };
                 _context.Colors.AddRange(listColor);
             }
-            if (_context.AdvertistmentPages.Count() == 0)
-            {
-                List<AdvertistmentPage> pages = new List<AdvertistmentPage>()
-                {
-                    new AdvertistmentPage() {Id="home", Name="Home",AdvertistmentPositions = new List<AdvertistmentPosition>(){
-                        new AdvertistmentPosition(){Id="home-left",Name="Bên trái"}
-                    } },
-                    new AdvertistmentPage() {Id="product-cate", Name="Product category" ,
-                        AdvertistmentPositions = new List<AdvertistmentPosition>(){
-                        new AdvertistmentPosition(){Id="product-cate-left",Name="Bên trái"}
-                    }},
-                    new AdvertistmentPage() {Id="product-detail", Name="Product detail",
-                        AdvertistmentPositions = new List<AdvertistmentPosition>(){
-                        new AdvertistmentPosition(){Id="product-detail-left",Name="Bên trái"}
-                    } },
+          
 
-                };
-                _context.AdvertistmentPages.AddRange(pages);
-            }
-
-
-            if (_context.Slides.Count() == 0)
+            if (!_context.Slides.Any())
             {
                 List<Slide> slides = new List<Slide>()
                 {
@@ -176,7 +157,7 @@ namespace CleverCore.Data.EF
             }
 
 
-            if (_context.Sizes.Count() == 0)
+            if (!_context.Sizes.Any())
             {
                 List<Size> listSize = new List<Size>()
                 {
@@ -190,7 +171,7 @@ namespace CleverCore.Data.EF
                 _context.Sizes.AddRange(listSize);
             }
 
-            if (_context.ProductCategories.Count() == 0)
+            if (!_context.ProductCategories.Any())
             {
                 List<ProductCategory> listProductCategory = new List<ProductCategory>()
                 {

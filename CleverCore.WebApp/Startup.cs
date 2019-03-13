@@ -157,7 +157,7 @@ namespace CleverCore.WebApp
               });
 
             services.AddTransient(typeof(IUnitOfWork), typeof(EFUnitOfWork));
-            services.AddTransient(typeof(IRepository<,>), typeof(EFRepository<,>));
+            services.AddTransient(typeof(IRepository<,>), typeof(EfRepository<,>));
             //Serrvices
             services.AddTransient<IProductCategoryService, ProductCategoryService>();
             services.AddTransient<IFunctionService, FunctionService>();
