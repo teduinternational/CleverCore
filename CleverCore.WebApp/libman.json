@@ -44,14 +44,7 @@
         "jquery.validate.unobtrusive.min.js"
       ]
     },
-    {
-      "provider": "cdnjs",
-      "library": "font-awesome@5.7.2",
-      "destination": "wwwroot/lib/font-awesome/",
-      "files": [
-        "css/all.min.css"
-      ]
-    },
+
     {
       "provider": "cdnjs",
       "library": "moment.js@2.24.0",
@@ -161,6 +154,23 @@
         "jquery-ui.theme.min.css",
         "jquery-ui.min.js"
       ]
+    },
+    {
+      "library": "animate.css@3.7.0",
+      "destination": "wwwroot/lib/animate.css/"
+    },
+    {
+      "library": "flot@0.8.3",
+      "destination": "wwwroot/lib/flot/"
+    },
+    {
+      "library": "datejs@1.0",
+      "destination": "wwwroot/lib/datejs/"
+    },
+    {
+      "provider": "cdnjs",
+      "library": "font-awesome@5.7.2",
+      "destination": "wwwroot/lib/font-awesome/"
     }
   ]
 }

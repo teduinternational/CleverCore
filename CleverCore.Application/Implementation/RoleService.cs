@@ -19,7 +19,7 @@ namespace CleverCore.Application.Implementation
         private readonly RoleManager<AppRole> _roleManager;
         private readonly IRepository<Function, string> _functionRepository;
         private readonly IRepository<Permission, int> _permissionRepository;
-        private readonly IRepository<Announcement, string> _announRepository;
+        private readonly IRepository<Announcement, Guid> _announRepository;
         private readonly IRepository<AnnouncementUser, int> _announUserRepository;
 
         private readonly IUnitOfWork _unitOfWork;
@@ -29,7 +29,7 @@ namespace CleverCore.Application.Implementation
             IRepository<AnnouncementUser, int> announUserRepository,
          IRepository<Function, string> functionRepository,
          IRepository<Permission, int> permissionRepository,
-            IRepository<Announcement, string> announRepository)
+            IRepository<Announcement, Guid> announRepository)
         {
             _unitOfWork = unitOfWork;
             _roleManager = roleManager;

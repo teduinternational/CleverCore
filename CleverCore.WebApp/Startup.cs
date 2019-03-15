@@ -193,7 +193,6 @@ namespace CleverCore.WebApp
             {
                 app.UseExceptionHandler("/Home/Error");
             }
-            app.UseImageResizer();
             app.UseStaticFiles();
             app.UseMinResponse();
             app.UseAuthentication();

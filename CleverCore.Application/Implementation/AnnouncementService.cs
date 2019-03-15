@@ -11,12 +11,12 @@ namespace CleverCore.Application.Implementation
 {
     public class AnnouncementService : IAnnouncementService
     {
-        private readonly IRepository<Announcement, string> _announcementRepository;
+        private readonly IRepository<Announcement, Guid> _announcementRepository;
         private readonly IRepository<AnnouncementUser, int> _announcementUserRepository;
 
         private IUnitOfWork _unitOfWork;
 
-        public AnnouncementService(IRepository<Announcement, string> announcementRepository,
+        public AnnouncementService(IRepository<Announcement, Guid> announcementRepository,
             IRepository<AnnouncementUser, int> announcementUserRepository,
             IUnitOfWork unitOfWork)
         {
