@@ -8,7 +8,7 @@ namespace CleverCore.Data.Entities
     public class Size : DomainEntity<int>
     {
 
-        [StringLength(250)]
+        [MaxLength(250)]
         public string Name
         {
             get; set;

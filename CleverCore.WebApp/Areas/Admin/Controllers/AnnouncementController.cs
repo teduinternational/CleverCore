@@ -1,4 +1,5 @@
-﻿using CleverCore.Application.Interfaces;
+﻿using System;
+using CleverCore.Application.Interfaces;
 using CleverCore.WebApp.Extensions;
 using Microsoft.AspNetCore.Mvc;
 
@@ -20,7 +21,7 @@ namespace CleverCore.WebApp.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public IActionResult MarkAsRead(string id)
+        public IActionResult MarkAsRead(Guid id)
         {
             var result = _announcementService.MarkAsRead(User.GetUserId(), id);
             return new OkObjectResult(result);

@@ -7,18 +7,18 @@ namespace CleverCore.Data.Entities
     [Table("Slides")]
     public class Slide : DomainEntity<int>
     {
-        [StringLength(250)]
+        [MaxLength(250)]
         [Required]
         public string Name { set; get; }
 
-        [StringLength(250)]
+        [MaxLength(250)]
         public string Description { set; get; }
 
-        [StringLength(250)]
+        [MaxLength(250)]
         [Required]
         public string Image { set; get; }
 
-        [StringLength(250)]
+        [MaxLength(250)]
         public string Url { set; get; }
 
         public int? DisplayOrder { set; get; }
@@ -27,7 +27,7 @@ namespace CleverCore.Data.Entities
 
         public string Content { set; get; }
 
-        [StringLength(25)]
+        [MaxLength(25)]
         [Required]
         public string GroupAlias { get; set; }
     }

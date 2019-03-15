@@ -12,74 +12,15 @@ namespace CleverCore.Data.Entities
     [Table("Products")]
     public class Product : DomainEntity<int>, ISwitchable, IDateTracking, IHasSeoMetaData
     {
-        public Product() {
-            ProductTags = new List<ProductTag>();
-        }
-
-        public Product(string name, int categoryId, string thumbnailImage,
-            decimal price, decimal originalPrice, decimal? promotionPrice,
-            string description, string content, bool? homeFlag, bool? hotFlag,
-            string tags, string unit, Status status, string seoPageTitle,
-            string seoAlias, string seoMetaKeyword,
-            string seoMetaDescription)
-        {
-            Name = name;
-            CategoryId = categoryId;
-            Image = thumbnailImage;
-            Price = price;
-            OriginalPrice = originalPrice;
-            PromotionPrice = promotionPrice;
-            Description = description;
-            Content = content;
-            HomeFlag = homeFlag;
-            HotFlag = hotFlag;
-            Tags = tags;
-            Unit = unit;
-            Status = status;
-            SeoPageTitle = seoPageTitle;
-            SeoAlias = seoAlias;
-            SeoKeywords = seoMetaKeyword;
-            SeoDescription = seoMetaDescription;
-            ProductTags = new List<ProductTag>();
-
-        }
-
-        public Product(int id, string name, int categoryId, string thumbnailImage,
-             decimal price, decimal originalPrice, decimal? promotionPrice,
-             string description, string content, bool? homeFlag, bool? hotFlag,
-             string tags, string unit, Status status, string seoPageTitle,
-             string seoAlias, string seoMetaKeyword,
-             string seoMetaDescription)
-        {
-            Id = id;
-            Name = name;
-            CategoryId = categoryId;
-            Image = thumbnailImage;
-            Price = price;
-            OriginalPrice = originalPrice;
-            PromotionPrice = promotionPrice;
-            Description = description;
-            Content = content;
-            HomeFlag = homeFlag;
-            HotFlag = hotFlag;
-            Tags = tags;
-            Unit = unit;
-            Status = status;
-            SeoPageTitle = seoPageTitle;
-            SeoAlias = seoAlias;
-            SeoKeywords = seoMetaKeyword;
-            SeoDescription = seoMetaDescription;
-            ProductTags = new List<ProductTag>();
-
-        }
-        [StringLength(255)]
+        
+        [MaxLength(255)]
         [Required]
         public string Name { get; set; }
 
         [Required]
         public int CategoryId { get; set; }
 
-        [StringLength(255)]
+        [MaxLength(255)]
         public string Image { get; set; }
 
         [Required]
@@ -91,7 +32,7 @@ namespace CleverCore.Data.Entities
         [Required]
         public decimal OriginalPrice { get; set; }
 
-        [StringLength(255)]
+        [MaxLength(255)]
         public string Description { get; set; }
 
         public string Content { get; set; }
@@ -102,10 +43,10 @@ namespace CleverCore.Data.Entities
 
         public int? ViewCount { get; set; }
 
-        [StringLength(255)]
+        [MaxLength(255)]
         public string Tags { get; set; }
 
-        [StringLength(255)]
+        [MaxLength(255)]
         public string Unit { get; set; }
 
         [ForeignKey("CategoryId")]
@@ -115,13 +56,13 @@ namespace CleverCore.Data.Entities
 
         public string SeoPageTitle {set;get;}
 
-        [StringLength(255)]
+        [MaxLength(255)]
         public string SeoAlias {set;get;}
 
-        [StringLength(255)]
+        [MaxLength(255)]
         public string SeoKeywords {set;get;}
 
-        [StringLength(255)]
+        [MaxLength(255)]
         public string SeoDescription {set;get;}
 
         public DateTime DateCreated {set;get;}

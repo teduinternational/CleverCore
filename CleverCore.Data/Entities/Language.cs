@@ -10,7 +10,7 @@ namespace CleverCore.Data.Entities
     public class Language : DomainEntity<string>, ISwitchable
     {
         [Required]
-        [StringLength(128)]
+        [MaxLength(128)]
         public string Name { get; set; }
 
         public bool IsDefault { get; set; }

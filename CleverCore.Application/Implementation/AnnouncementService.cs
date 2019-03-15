@@ -50,7 +50,7 @@ namespace CleverCore.Application.Implementation
             return paginationSet;
         }
 
-        public bool MarkAsRead(Guid userId, string id)
+        public bool MarkAsRead(Guid userId, Guid id)
         {
             bool result = false;
             var announ = _announcementUserRepository.FindSingle(x => x.AnnouncementId == id

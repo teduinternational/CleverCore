@@ -12,10 +12,10 @@ namespace CleverCore.Data.Entities
         [ForeignKey("ProductId")]
         public virtual Product Product { get; set; }
 
-        [StringLength(250)]
+        [MaxLength(250)]
         public string Path { get; set; }
 
-        [StringLength(250)]
+        [MaxLength(250)]
         public string Caption { get; set; }
     }
 }

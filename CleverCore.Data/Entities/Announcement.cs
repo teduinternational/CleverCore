@@ -9,7 +9,7 @@ using CleverCore.Infrastructure.SharedKernel;
 namespace CleverCore.Data.Entities
 {
     [Table("Announcements")]
-    public class Announcement : DomainEntity<string>, ISwitchable, IDateTracking
+    public class Announcement : DomainEntity<Guid>, ISwitchable, IDateTracking
     {
         public Announcement()
         {
@@ -25,10 +25,10 @@ namespace CleverCore.Data.Entities
         }
 
         [Required]
-        [StringLength(250)]
+        [MaxLength(250)]
         public string Title { set; get; }
 
-        [StringLength(250)]
+        [MaxLength(250)]
         public string Content { set; get; }
 
         public Guid UserId { set; get; }

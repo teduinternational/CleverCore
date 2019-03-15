@@ -8,6 +8,6 @@ namespace CleverCore.Application.Interfaces
     {
         PagedResult<AnnouncementViewModel> GetAllUnReadPaging(Guid userId, int pageIndex, int pageSize);
 
-        bool MarkAsRead(Guid userId, string id);
+        bool MarkAsRead(Guid userId, Guid id);
     }
 }

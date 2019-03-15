@@ -11,47 +11,7 @@ namespace CleverCore.Data.Entities
     [Table("Blogs")]
     public class Blog : DomainEntity<int>, ISwitchable, IDateTracking, IHasSeoMetaData
     {
-        public Blog() { }
-        public Blog(string name,string thumbnailImage,
-           string description, string content, bool? homeFlag, bool? hotFlag,
-           string tags, Status status, string seoPageTitle,
-           string seoAlias, string seoMetaKeyword,
-           string seoMetaDescription)
-        {
-            Name = name;
-            Image = thumbnailImage;
-            Description = description;
-            Content = content;
-            HomeFlag = homeFlag;
-            HotFlag = hotFlag;
-            Tags = tags;
-            Status = status;
-            SeoPageTitle = seoPageTitle;
-            SeoAlias = seoAlias;
-            SeoKeywords = seoMetaKeyword;
-            SeoDescription = seoMetaDescription;
-        }
-
-        public Blog(int id, string name,string thumbnailImage,
-             string description, string content, bool? homeFlag, bool? hotFlag,
-             string tags, Status status, string seoPageTitle,
-             string seoAlias, string seoMetaKeyword,
-             string seoMetaDescription)
-        {
-            Id = id;
-            Name = name;
-            Image = thumbnailImage;
-            Description = description;
-            Content = content;
-            HomeFlag = homeFlag;
-            HotFlag = hotFlag;
-            Tags = tags;
-            Status = status;
-            SeoPageTitle = seoPageTitle;
-            SeoAlias = seoAlias;
-            SeoKeywords = seoMetaKeyword;
-            SeoDescription = seoMetaDescription;
-        }
+        
         [Required]
         [MaxLength(256)]
         public string Name { set; get; }

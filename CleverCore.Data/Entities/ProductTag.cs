@@ -8,7 +8,7 @@ namespace CleverCore.Data.Entities
     {
         public int ProductId { get; set; }
 
-        [StringLength(50)]
+        [MaxLength(50)]
         public string TagId { set; get; }
 
         [ForeignKey("ProductId")]

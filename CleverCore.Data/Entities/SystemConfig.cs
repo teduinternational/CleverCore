@@ -11,7 +11,7 @@ namespace CleverCore.Data.Entities
     public class SystemConfig : DomainEntity<string>, ISwitchable
     {
         [Required]
-        [StringLength(128)]
+        [MaxLength(128)]
         public string Name { get; set; }
 
         public string Value1 { get; set; }

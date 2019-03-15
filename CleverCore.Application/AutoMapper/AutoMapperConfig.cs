@@ -9,7 +9,6 @@ namespace CleverCore.Application.AutoMapper
             return new MapperConfiguration(cfg =>
             {
                 cfg.AddProfile(new DomainToViewModelMappingProfile());
-                cfg.AddProfile(new ViewModelToDomainMappingProfile());
             });
         }
     }

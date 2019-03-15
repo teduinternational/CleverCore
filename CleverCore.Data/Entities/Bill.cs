@@ -12,34 +12,7 @@ namespace CleverCore.Data.Entities
     [Table("Bills")]
     public class Bill : DomainEntity<int>, ISwitchable, IDateTracking
     {
-        public Bill() { }
 
-        public Bill(string customerName, string customerAddress, string customerMobile, string customerMessage,
-            BillStatus billStatus, PaymentMethod paymentMethod, Status status, Guid? customerId)
-        {
-            CustomerName = customerName;
-            CustomerAddress = customerAddress;
-            CustomerMobile = customerMobile;
-            CustomerMessage = customerMessage;
-            BillStatus = billStatus;
-            PaymentMethod = paymentMethod;
-            Status = status;
-            CustomerId = customerId;
-        }
-
-        public Bill(int id, string customerName, string customerAddress, string customerMobile, string customerMessage,
-           BillStatus billStatus, PaymentMethod paymentMethod, Status status, Guid? customerId)
-        {
-            Id = id;
-            CustomerName = customerName;
-            CustomerAddress = customerAddress;
-            CustomerMobile = customerMobile;
-            CustomerMessage = customerMessage;
-            BillStatus = billStatus;
-            PaymentMethod = paymentMethod;
-            Status = status;
-            CustomerId = customerId;
-        }
         [Required]
         [MaxLength(256)]
         public string CustomerName { set; get; }

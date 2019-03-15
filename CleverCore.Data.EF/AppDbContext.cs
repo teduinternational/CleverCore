@@ -1,7 +1,4 @@
-﻿using System;
-using System.IO;
-using System.Linq;
-using CleverCore.Data.EF.Configurations;
+﻿using CleverCore.Data.EF.Configurations;
 using CleverCore.Data.EF.Extensions;
 using CleverCore.Data.Entities;
 using CleverCore.Data.Interfaces;
@@ -11,6 +8,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
+using System;
+using System.IO;
+using System.Linq;
 
 namespace CleverCore.Data.EF
 {
@@ -78,14 +78,13 @@ namespace CleverCore.Data.EF
             builder.AddConfiguration(new FooterConfiguration());
             builder.AddConfiguration(new ProductTagConfiguration());
             builder.AddConfiguration(new SystemConfigConfiguration());
-            builder.AddConfiguration(new AdvertistmentPositionConfiguration());
-
+            builder.AddConfiguration(new FunctionConfiguration());
             //base.OnModelCreating(builder);
         }
 
         public override int SaveChanges()
         {
-            var modified = ChangeTracker.Entries().Where(e => e.State == EntityState.Modified || e.State == EntityState.Added);
+            System.Collections.Generic.IEnumerable<EntityEntry> modified = ChangeTracker.Entries().Where(e => e.State == EntityState.Modified || e.State == EntityState.Added);
 
             foreach (EntityEntry item in modified)
             {
@@ -109,8 +108,8 @@ namespace CleverCore.Data.EF
             IConfiguration configuration = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json").Build();
-            var builder = new DbContextOptionsBuilder<AppDbContext>();
-            var connectionString = configuration.GetConnectionString("DefaultConnection");
+            DbContextOptionsBuilder<AppDbContext> builder = new DbContextOptionsBuilder<AppDbContext>();
+            string connectionString = configuration.GetConnectionString("DefaultConnection");
             builder.UseSqlServer(connectionString);
             return new AppDbContext(builder.Options);
         }

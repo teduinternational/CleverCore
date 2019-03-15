@@ -8,21 +8,11 @@ namespace CleverCore.Data.Entities
     [Table("Permissions")]
     public class Permission : DomainEntity<int>
     {
-        public Permission() { }
-        public Permission(Guid roleId, string functionId, bool canCreate,
-            bool canRead, bool canUpdate, bool canDelete)
-        {
-            RoleId = roleId;
-            FunctionId = functionId;
-            CanCreate = canCreate;
-            CanRead = canRead;
-            CanUpdate = canUpdate;
-            CanDelete = canDelete;
-        }
+      
         [Required]
         public Guid RoleId { get; set; }
 
-        [StringLength(128)]
+        [MaxLength(128)]
         [Required]
         public string FunctionId { get; set; }
 
