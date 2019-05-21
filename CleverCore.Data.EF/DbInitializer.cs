@@ -14,7 +14,9 @@ namespace CleverCore.Data.EF
         private readonly AppDbContext _context;
         private readonly UserManager<AppUser> _userManager;
         private readonly RoleManager<AppRole> _roleManager;
-        public DbInitializer(AppDbContext context, UserManager<AppUser> userManager, RoleManager<AppRole> roleManager)
+        public DbInitializer(AppDbContext context, 
+            UserManager<AppUser> userManager, 
+            RoleManager<AppRole> roleManager)
         {
             _context = context;
             _userManager = userManager;
