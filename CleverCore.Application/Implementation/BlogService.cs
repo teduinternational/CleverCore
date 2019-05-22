@@ -20,21 +20,23 @@ namespace CleverCore.Application.Implementation
         private readonly IRepository<Tag, string> _tagRepository;
         private readonly IRepository<BlogTag, int> _blogTagRepository;
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IMapper _mapper;
 
         public BlogService(IRepository<Blog, int> blogRepository,
             IRepository<BlogTag, int> blogTagRepository,
             IRepository<Tag, string> tagRepository,
-            IUnitOfWork unitOfWork)
+            IUnitOfWork unitOfWork,IMapper mapper)
         {
             _blogRepository = blogRepository;
             _blogTagRepository = blogTagRepository;
             _tagRepository = tagRepository;
             _unitOfWork = unitOfWork;
+            _mapper = mapper;
         }
 
         public BlogViewModel Add(BlogViewModel blogVm)
         {
-            var blog = Mapper.Map<BlogViewModel, Blog>(blogVm);
+            var blog = _mapper.Map<BlogViewModel, Blog>(blogVm);
 
             if (!string.IsNullOrEmpty(blog.Tags))
             {
@@ -68,8 +70,9 @@ namespace CleverCore.Application.Implementation
 
         public List<BlogViewModel> GetAll()
         {
-            return _blogRepository.FindAll(c => c.BlogTags)
-                .ProjectTo<BlogViewModel>().ToList();
+           return _mapper.ProjectTo<BlogViewModel>(_blogRepository
+                   .FindAll(c => c.BlogTags)) 
+                .ToList();
         }
 
         public PagedResult<BlogViewModel> GetAllPaging(string keyword, int pageSize, int page = 1)
@@ -85,7 +88,7 @@ namespace CleverCore.Application.Implementation
 
             var paginationSet = new PagedResult<BlogViewModel>()
             {
-                Results = data.ProjectTo<BlogViewModel>().ToList(),
+                Results = _mapper.ProjectTo<BlogViewModel>(data).ToList(),
                 CurrentPage = page,
                 RowCount = totalRow,
                 PageSize = pageSize,
@@ -96,7 +99,7 @@ namespace CleverCore.Application.Implementation
 
         public BlogViewModel GetById(int id)
         {
-            return Mapper.Map<Blog, BlogViewModel>(_blogRepository.FindById(id));
+            return _mapper.Map<Blog, BlogViewModel>(_blogRepository.FindById(id));
         }
 
         public void Save()
@@ -136,8 +139,10 @@ namespace CleverCore.Application.Implementation
 
         public List<BlogViewModel> GetLastest(int top)
         {
-            return _blogRepository.FindAll(x => x.Status == Status.Active).OrderByDescending(x => x.DateCreated)
-                .Take(top).ProjectTo<BlogViewModel>().ToList();
+            return _mapper.ProjectTo<BlogViewModel>(_blogRepository.FindAll(x => x.Status == Status.Active)
+                    .OrderByDescending(x => x.DateCreated)
+                    .Take(top))
+                .ToList();
         }
 
         public List<BlogViewModel> GetHotProduct(int top)
@@ -201,7 +206,7 @@ namespace CleverCore.Application.Implementation
                 .ToList();
         }
 
-        public List<BlogViewModel> GetReatedBlogs(int id, int top)
+        public List<BlogViewModel> GetRelatedBlogs(int id, int top)
         {
             return _blogRepository.FindAll(x => x.Status == Status.Active
                 && x.Id != id)
@@ -248,7 +253,7 @@ namespace CleverCore.Application.Implementation
 
         public TagViewModel GetTag(string tagId)
         {
-            return Mapper.Map<Tag, TagViewModel>(_tagRepository.FindSingle(x => x.Id == tagId));
+            return _mapper.Map<Tag, TagViewModel>(_tagRepository.FindSingle(x => x.Id == tagId));
         }
 
         public List<BlogViewModel> GetList(string keyword)

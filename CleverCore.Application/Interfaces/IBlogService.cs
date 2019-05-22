@@ -27,7 +27,7 @@ namespace CleverCore.Application.Interfaces
 
         List<BlogViewModel> GetList(string keyword);
 
-        List<BlogViewModel> GetReatedBlogs(int id, int top);
+        List<BlogViewModel> GetRelatedBlogs(int id, int top);
 
         List<string> GetListByName(string name);
 
