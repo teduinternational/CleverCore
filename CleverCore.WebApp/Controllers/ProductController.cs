@@ -13,7 +13,8 @@ namespace CleverCore.WebApp.Controllers
         readonly IBillService _billService;
         readonly IProductCategoryService _productCategoryService;
         readonly IConfiguration _configuration;
-        public ProductController(IProductService productService, IConfiguration configuration,
+        public ProductController(IProductService productService, 
+            IConfiguration configuration,
             IBillService billService,
             IProductCategoryService productCategoryService)
         {

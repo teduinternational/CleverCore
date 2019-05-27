@@ -6,6 +6,7 @@ using System.Net.Http.Headers;
 using CleverCore.Application.Interfaces;
 using CleverCore.Application.ViewModels.Product;
 using CleverCore.Utilities.Helpers;
+using CleverCore.WebApp.Services;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -20,14 +21,18 @@ namespace CleverCore.WebApp.Areas.Admin.Controllers
         private readonly IProductService _productService;
         private readonly IProductCategoryService _productCategoryService;
         private readonly IHostingEnvironment _hostingEnvironment;
-
+        private readonly IFileService _fileService;
+        private readonly IExcelService _excelService;
         public ProductController(IProductService productService, 
             IProductCategoryService productCategoryService,
-            IHostingEnvironment hostingEnvironment)
+            IHostingEnvironment hostingEnvironment,
+            IFileService fileService, IExcelService excelService)
         {
             _productService = productService;
             _productCategoryService = productCategoryService;
             _hostingEnvironment = hostingEnvironment;
+            _excelService = excelService;
+            _fileService = fileService;
         }
 
         public IActionResult Index()
@@ -160,13 +165,13 @@ namespace CleverCore.WebApp.Areas.Admin.Controllers
                                    .Trim('"');
 
                 string folder = _hostingEnvironment.WebRootPath + $@"\uploaded\excels";
-                if (!Directory.Exists(folder))
+                if (!_fileService.CheckDirectoryExist(folder))
                 {
-                    Directory.CreateDirectory(folder);
+                    _fileService.CreateDirectory(folder);
                 }
                 string filePath = Path.Combine(folder, filename);
 
-                using (FileStream fs = System.IO.File.Create(filePath))
+                using (FileStream fs = _fileService.CreateFile(filePath))
                 {
                     file.CopyTo(fs);
                     fs.Flush();
@@ -182,27 +187,20 @@ namespace CleverCore.WebApp.Areas.Admin.Controllers
         {
             string sWebRootFolder = _hostingEnvironment.WebRootPath;
             string directory = Path.Combine(sWebRootFolder, "export-files");
-            if (!Directory.Exists(directory))
+            if (!_fileService.CheckDirectoryExist(directory))
             {
-                Directory.CreateDirectory(directory);
+                _fileService.CreateDirectory(directory);
             }
             string sFileName = $"Product_{DateTime.Now:yyyyMMddhhmmss}.xlsx";
             string fileUrl = $"{Request.Scheme}://{Request.Host}/export-files/{sFileName}";
             FileInfo file = new FileInfo(Path.Combine(directory, sFileName));
-            if (file.Exists)
+            if (_fileService.CheckFileExist(file))
             {
-                file.Delete();
+                _fileService.DeleteFile(file);
                 file = new FileInfo(Path.Combine(sWebRootFolder, sFileName));
             }
             var products = _productService.GetAll();
-            using (ExcelPackage package = new ExcelPackage(file))
-            {
-                // add a new worksheet to the empty workbook
-                ExcelWorksheet worksheet = package.Workbook.Worksheets.Add("Products");
-                worksheet.Cells["A1"].LoadFromCollection(products, true, TableStyles.Light1);
-                worksheet.Cells.AutoFitColumns();
-                package.Save(); //Save the workbook.
-            }
+           _excelService.WriteExcel(file,products);
             return new OkObjectResult(fileUrl);
         }
         #endregion AJAX API

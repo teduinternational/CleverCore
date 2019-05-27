@@ -47,7 +47,6 @@ namespace CleverCore.WebApi
             services.AddMvc().
                 AddJsonOptions(options =>
                 options.SerializerSettings.ContractResolver = new DefaultContractResolver());
-
             services.AddSwaggerGen(s =>
             {
                 s.SwaggerDoc("v1", new Info
