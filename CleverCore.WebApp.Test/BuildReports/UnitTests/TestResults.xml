@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<assemblies timestamp="05/28/2019 06:48:14">
+  <assembly name="E:\CleverCore\CleverCore.WebApp.Test\bin\Debug\netcoreapp2.2\CleverCore.WebApp.Test.dll" run-date="2019-05-28" run-time="06:48:14" total="5" passed="5" failed="0" skipped="0" time="0.661" errors="0">
+    <errors />
+    <collection total="3" passed="3" failed="0" skipped="0" name="Test collection for CleverCore.WebApp.Test.Controller.CartControllerTest" time="0.268">
+      <test name="CleverCore.WebApp.Test.Controller.CartControllerTest.Checkout_NullSession_RedirectResult" type="CleverCore.WebApp.Test.Controller.CartControllerTest" method="Checkout_NullSession_RedirectResult" time="0.2410000" result="Pass">
+        <traits />
+      </test>
+      <test name="CleverCore.WebApp.Test.Controller.CartControllerTest.Checkout_ValidRequest_OkResult" type="CleverCore.WebApp.Test.Controller.CartControllerTest" method="Checkout_ValidRequest_OkResult" time="0.0080000" result="Pass">
+        <traits />
+      </test>
+      <test name="CleverCore.WebApp.Test.Controller.CartControllerTest.Checkout_PostValid_OkResult" type="CleverCore.WebApp.Test.Controller.CartControllerTest" method="Checkout_PostValid_OkResult" time="0.0190000" result="Pass">
+        <traits />
+      </test>
+    </collection>
+    <collection total="1" passed="1" failed="0" skipped="0" name="Test collection for CleverCore.WebApp.Test.Controller.Components.CategoryMenuViewComponentTest" time="0.194">
+      <test name="CleverCore.WebApp.Test.Controller.Components.CategoryMenuViewComponentTest.Invoke_ValidInput_ResultOk" type="CleverCore.WebApp.Test.Controller.Components.CategoryMenuViewComponentTest" method="Invoke_ValidInput_ResultOk" time="0.1940000" result="Pass">
+        <traits />
+      </test>
+    </collection>
+    <collection total="1" passed="1" failed="0" skipped="0" name="Test collection for CleverCore.WebApp.Test.Controller.ProductControllerTest" time="0.199">
+      <test name="CleverCore.WebApp.Test.Controller.ProductControllerTest.Index_GetCategory_ValidModel" type="CleverCore.WebApp.Test.Controller.ProductControllerTest" method="Index_GetCategory_ValidModel" time="0.1990000" result="Pass">
+        <traits />
+      </test>
+    </collection>
+  </assembly>
+</assemblies>

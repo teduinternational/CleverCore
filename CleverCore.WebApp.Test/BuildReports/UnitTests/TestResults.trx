@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="52130ead-68dc-4a14-bf33-ce0dbbde8458" name="ngoct@DESKTOP-1DJ9N9N 2019-05-28 06:48:16" runUser="DESKTOP-1DJ9N9N\ngoct" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2019-05-28T06:48:16.7570054+07:00" queuing="2019-05-28T06:48:16.7570055+07:00" start="2019-05-28T06:48:14.4934099+07:00" finish="2019-05-28T06:48:16.8199226+07:00" />
+  <TestSettings name="default" id="17e6a15f-07dd-431f-9cfe-c812d3e59b86">
+    <Deployment runDeploymentRoot="ngoct_DESKTOP-1DJ9N9N_2019-05-28_06_48_16" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="4e77214a-3aff-4de1-a9a9-c5103374af0b" testId="0b672be8-458a-5b71-35ea-9b61001366c0" testName="CleverCore.WebApp.Test.Controller.CartControllerTest.Checkout_NullSession_RedirectResult" computerName="DESKTOP-1DJ9N9N" duration="00:00:00.2410000" startTime="2019-05-28T06:48:16.6368458+07:00" endTime="2019-05-28T06:48:16.6368464+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4e77214a-3aff-4de1-a9a9-c5103374af0b" />
+    <UnitTestResult executionId="37c68b00-9286-4c54-9341-e327b4a76785" testId="f38e5218-d8f4-5f59-fe2f-c9eb6b5ef242" testName="CleverCore.WebApp.Test.Controller.CartControllerTest.Checkout_PostValid_OkResult" computerName="DESKTOP-1DJ9N9N" duration="00:00:00.0190000" startTime="2019-05-28T06:48:16.6641486+07:00" endTime="2019-05-28T06:48:16.6641492+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="37c68b00-9286-4c54-9341-e327b4a76785" />
+    <UnitTestResult executionId="48816bef-c7b7-4216-a58b-c5dfd869898a" testId="ae733a8f-2650-96e7-f2e6-2136979456f6" testName="CleverCore.WebApp.Test.Controller.CartControllerTest.Checkout_ValidRequest_OkResult" computerName="DESKTOP-1DJ9N9N" duration="00:00:00.0080000" startTime="2019-05-28T06:48:16.6450999+07:00" endTime="2019-05-28T06:48:16.6451004+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="48816bef-c7b7-4216-a58b-c5dfd869898a" />
+    <UnitTestResult executionId="a1637d3f-efba-4aa6-a5fb-e5b87ae63689" testId="ca625f52-dc7b-d131-b98e-0e9fffd7f534" testName="CleverCore.WebApp.Test.Controller.ProductControllerTest.Index_GetCategory_ValidModel" computerName="DESKTOP-1DJ9N9N" duration="00:00:00.1990000" startTime="2019-05-28T06:48:16.6118192+07:00" endTime="2019-05-28T06:48:16.6118198+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a1637d3f-efba-4aa6-a5fb-e5b87ae63689" />
+    <UnitTestResult executionId="49d4e6c4-1cc2-4813-a353-997764a91f6e" testId="450eddc4-6502-5cb5-e715-b6221733a8e3" testName="CleverCore.WebApp.Test.Controller.Components.CategoryMenuViewComponentTest.Invoke_ValidInput_ResultOk" computerName="DESKTOP-1DJ9N9N" duration="00:00:00.1940000" startTime="2019-05-28T06:48:16.6182354+07:00" endTime="2019-05-28T06:48:16.6182359+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="49d4e6c4-1cc2-4813-a353-997764a91f6e" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="CleverCore.WebApp.Test.Controller.CartControllerTest.Checkout_NullSession_RedirectResult" storage="e:\clevercore\clevercore.webapp.test\bin\debug\netcoreapp2.2\clevercore.webapp.test.dll" id="0b672be8-458a-5b71-35ea-9b61001366c0">
+      <Execution id="4e77214a-3aff-4de1-a9a9-c5103374af0b" />
+      <TestMethod codeBase="E:\CleverCore\CleverCore.WebApp.Test\bin\Debug\netcoreapp2.2\CleverCore.WebApp.Test.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="CleverCore.WebApp.Test" name="CleverCore.WebApp.Test.Controller.CartControllerTest.Checkout_NullSession_RedirectResult" />
+    </UnitTest>
+    <UnitTest name="CleverCore.WebApp.Test.Controller.ProductControllerTest.Index_GetCategory_ValidModel" storage="e:\clevercore\clevercore.webapp.test\bin\debug\netcoreapp2.2\clevercore.webapp.test.dll" id="ca625f52-dc7b-d131-b98e-0e9fffd7f534">
+      <Execution id="a1637d3f-efba-4aa6-a5fb-e5b87ae63689" />
+      <TestMethod codeBase="E:\CleverCore\CleverCore.WebApp.Test\bin\Debug\netcoreapp2.2\CleverCore.WebApp.Test.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="CleverCore.WebApp.Test" name="CleverCore.WebApp.Test.Controller.ProductControllerTest.Index_GetCategory_ValidModel" />
+    </UnitTest>
+    <UnitTest name="CleverCore.WebApp.Test.Controller.CartControllerTest.Checkout_PostValid_OkResult" storage="e:\clevercore\clevercore.webapp.test\bin\debug\netcoreapp2.2\clevercore.webapp.test.dll" id="f38e5218-d8f4-5f59-fe2f-c9eb6b5ef242">
+      <Execution id="37c68b00-9286-4c54-9341-e327b4a76785" />
+      <TestMethod codeBase="E:\CleverCore\CleverCore.WebApp.Test\bin\Debug\netcoreapp2.2\CleverCore.WebApp.Test.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="CleverCore.WebApp.Test" name="CleverCore.WebApp.Test.Controller.CartControllerTest.Checkout_PostValid_OkResult" />
+    </UnitTest>
+    <UnitTest name="CleverCore.WebApp.Test.Controller.Components.CategoryMenuViewComponentTest.Invoke_ValidInput_ResultOk" storage="e:\clevercore\clevercore.webapp.test\bin\debug\netcoreapp2.2\clevercore.webapp.test.dll" id="450eddc4-6502-5cb5-e715-b6221733a8e3">
+      <Execution id="49d4e6c4-1cc2-4813-a353-997764a91f6e" />
+      <TestMethod codeBase="E:\CleverCore\CleverCore.WebApp.Test\bin\Debug\netcoreapp2.2\CleverCore.WebApp.Test.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="CleverCore.WebApp.Test" name="CleverCore.WebApp.Test.Controller.Components.CategoryMenuViewComponentTest.Invoke_ValidInput_ResultOk" />
+    </UnitTest>
+    <UnitTest name="CleverCore.WebApp.Test.Controller.CartControllerTest.Checkout_ValidRequest_OkResult" storage="e:\clevercore\clevercore.webapp.test\bin\debug\netcoreapp2.2\clevercore.webapp.test.dll" id="ae733a8f-2650-96e7-f2e6-2136979456f6">
+      <Execution id="48816bef-c7b7-4216-a58b-c5dfd869898a" />
+      <TestMethod codeBase="E:\CleverCore\CleverCore.WebApp.Test\bin\Debug\netcoreapp2.2\CleverCore.WebApp.Test.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="CleverCore.WebApp.Test" name="CleverCore.WebApp.Test.Controller.CartControllerTest.Checkout_ValidRequest_OkResult" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="0b672be8-458a-5b71-35ea-9b61001366c0" executionId="4e77214a-3aff-4de1-a9a9-c5103374af0b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f38e5218-d8f4-5f59-fe2f-c9eb6b5ef242" executionId="37c68b00-9286-4c54-9341-e327b4a76785" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ae733a8f-2650-96e7-f2e6-2136979456f6" executionId="48816bef-c7b7-4216-a58b-c5dfd869898a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ca625f52-dc7b-d131-b98e-0e9fffd7f534" executionId="a1637d3f-efba-4aa6-a5fb-e5b87ae63689" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="450eddc4-6502-5cb5-e715-b6221733a8e3" executionId="49d4e6c4-1cc2-4813-a353-997764a91f6e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="5" executed="5" passed="5" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v2.4.0 (64-bit .NET Core 4.6.27317.07)[xUnit.net 00:00:00.97]   Discovering: CleverCore.WebApp.Test[xUnit.net 00:00:01.03]   Discovered:  CleverCore.WebApp.Test[xUnit.net 00:00:01.03]   Starting:    CleverCore.WebApp.Test[xUnit.net 00:00:01.42]   Finished:    CleverCore.WebApp.Test</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

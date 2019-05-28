@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<assemblies timestamp="05/28/2019 07:18:09">
+  <assembly name="E:\CleverCore\CleverCore.WebApi.Test\bin\Debug\netcoreapp2.2\CleverCore.WebApi.Test.dll" run-date="2019-05-28" run-time="07:18:09" total="2" passed="2" failed="0" skipped="0" time="0.180" errors="0">
+    <errors />
+    <collection total="2" passed="2" failed="0" skipped="0" name="Test collection for CleverCore.WebApi.Test.Controllers.ProductControllerTest" time="0.180">
+      <test name="CleverCore.WebApi.Test.Controllers.ProductControllerTest.Get_ValidRequest_OkResult" type="CleverCore.WebApi.Test.Controllers.ProductControllerTest" method="Get_ValidRequest_OkResult" time="0.1750000" result="Pass">
+        <traits />
+      </test>
+      <test name="CleverCore.WebApi.Test.Controllers.ProductControllerTest.Get_ServiceException_BadRequestResult" type="CleverCore.WebApi.Test.Controllers.ProductControllerTest" method="Get_ServiceException_BadRequestResult" time="0.0050000" result="Pass">
+        <traits />
+      </test>
+    </collection>
+  </assembly>
+</assemblies>
